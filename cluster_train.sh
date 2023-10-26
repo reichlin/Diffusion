@@ -6,21 +6,7 @@ AT="@"
 # Test the job before actually submitting 
 # SBATCH_OR_CAT=cat
 SBATCH_OR_CAT=sbatch
-LOG_PATH="/Midgard/home/gustafte/slurm_logs/meta"
-CHECKPOINTS_DIR="/Midgard/home/gustafte/meta-linear/checkpoints"
-TENSORBOARD_DIR="/Midgard/home/gustafte/meta-linear/tensorboard"
-DATA_DIR="/Midgard/home/gustafte/meta-linear/data"
-
-MODEL_NAME=$1
-DATASET=$2
-MATRIX_DIM=$3
-MODEL=$4
-SUPPORT_SIZE=$5
-QUERY_SIZE=$6
-DATASET_SIZE=$7
-NUM_ORBITS=$8
-SEED=$9
-
+LOG_PATH="/Midgard/home/gustafte/slurm_logs/diffusion"
 
 
 "${SBATCH_OR_CAT}" << HERE
@@ -31,7 +17,7 @@ SEED=$9
 #SBATCH --mail-user="gustafte${AT}kth.se"
 #SBATCH --job-name="meta"
 #SBATCH --constrain="eowyn|arwen|galadriel|shelob|khazadum|balrog|belegost|rivendell|smaug"
-#SBATCH --gres=gpu:0
+#SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=16GB
 
