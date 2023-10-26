@@ -2,6 +2,7 @@ import numpy as np
 import torch
 from torch import nn
 import matplotlib.pyplot as plt
+import ipdb
 
 
 class DDPM(nn.Module):
